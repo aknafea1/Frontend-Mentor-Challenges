@@ -23,8 +23,8 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ### Links
 
-- Solution URL: (https://github.com/aknafea1/Frontend-Mentor-Challenges/QR Code Challenge)
-- Live Site URL:(https://aknafea1.github.io/Frontend-Mentor-Challenges/QR%20Code%20Challenge/)
+- Solution URL: https://github.com/aknafea1/Frontend-Mentor-Challenges/QR Code Challenge
+- Live Site URL:https://aknafea1.github.io/Frontend-Mentor-Challenges/QR%20Code%20Challenge/
 
 ## My process
 
@@ -37,4 +37,4 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ## Author
 
-- Frontend Mentor - (https://www.frontendmentor.io/profile/aknafea1)
+- Frontend Mentor - https://www.frontendmentor.io/profile/aknafea1
