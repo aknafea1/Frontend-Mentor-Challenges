@@ -24,7 +24,7 @@ This is a solution to the [Blog preview card challenge on Frontend Mentor](https
 
 ## My Process
 
-- Solution URL: https://github.com/aknafea1/Frontend-Mentor-Challenges/Blog%20Preview%20Card
+- Solution URL: https://github.com/aknafea1/Frontend-Mentor-Challenges/blob/main/Blog%20Preview%20Card/
 - Live Site URL: https://aknafea1.github.io/Frontend-Mentor-Challenges/Blog%20Preview%20Card
 
 ### Built with
