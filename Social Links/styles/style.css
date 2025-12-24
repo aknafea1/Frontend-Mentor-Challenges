@@ -1,0 +1,163 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter-VariableFont_slnt,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.4;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+/* ************************ */
+:root {
+  --Green: hsl(75, 94%, 57%);
+  --White: hsl(0, 0%, 100%);
+  --Grey-700: hsl(0, 0%, 20%);
+  --Grey-800: hsl(0, 0%, 12%);
+  --Grey-900: hsl(0, 0%, 8%);
+  --ff-base: Inter;
+  --fw-thin: 400;
+  --fw-regular: 600;
+  --fw-bold: 700;
+}
+body {
+  font-size: 0.875rem;
+  font-family: var(--ff-base);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  min-height: 100vh;
+  background-color: var(--Grey-900);
+  color: var(--White);
+}
+main {
+  flex: 1;
+  display: grid;
+  place-items: center;
+}
+article {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: var(--Grey-800);
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  width: 20rem;
+}
+figure img {
+  width: 4rem;
+  height: 4rem;
+  margin-inline: auto;
+  border-radius: 50%;
+  margin-bottom: 1.25rem;
+  object-fit: cover;
+}
+figcaption {
+  font-size: 1.25rem;
+  font-weight: var(--fw-regular);
+}
+.location {
+  color: var(--Green);
+  font-weight: var(--fw-bold);
+  margin-bottom: 0.75rem;
+}
+p,
+span {
+  font-weight: var(--fw-thin);
+  color: var(--White);
+  display: block;
+  font-size: 0.75rem;
+}
+
+ul {
+  padding: 0;
+}
+li {
+  list-style: none;
+  padding: 0.75rem;
+  background-color: var(--Grey-700);
+  margin: 1rem 0;
+  border-radius: 0.35rem;
+  font-weight: var(--fw-thin);
+  transition: 0.25s;
+  cursor: pointer;
+  font-weight: var(--fw-regular);
+}
+li:hover {
+  color: var(--Grey-900);
+  background-color: var(--Green);
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 81%, 75%);
+}
