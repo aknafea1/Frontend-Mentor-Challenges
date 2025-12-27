@@ -26,7 +26,7 @@ This is a solution to the [Calculator app challenge on Frontend Mentor](https://
 
 ## My Process
 
-- Solution URL: https://github.com/aknafea1/Frontend-Mentor-Challenges/Calculator%20App
+- Solution URL: https://github.com/aknafea1/Frontend-Mentor-Challenges/tree/main/Calculator%20App
 - Live Site URL: https://aknafea1.github.io/Frontend-Mentor-Challenges/Calculator%20App
 
 ### Built with
