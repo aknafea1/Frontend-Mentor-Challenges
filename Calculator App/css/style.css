@@ -1,0 +1,292 @@
+/* Reseters */
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/* ********************* */
+.theme-1 {
+  /* Backgrounds */
+  --bg-main: hsl(222, 26%, 31%);
+  --bg-toggle-keypad: hsl(223, 31%, 20%);
+  --bg-screen: hsl(224, 36%, 15%);
+
+  /* Keys */
+  --key-primary-bg: hsl(225, 21%, 49%);
+  --key-primary-shadow: hsl(224, 28%, 35%);
+
+  --key-accent-bg: hsl(6, 63%, 50%);
+  --key-accent-shadow: hsl(6, 70%, 34%);
+
+  --key-neutral-bg: hsl(0, 0%, 90%);
+  --key-neutral-shadow: hsl(28, 16%, 65%);
+
+  /* Text */
+  --text-primary: hsl(221, 14%, 31%);
+  --text-inverse: hsl(0, 100%, 100%);
+  --text-secondary: hsl(0, 100%, 100%);
+  --text-accent: hsl(0, 100%, 100%);
+}
+.theme-2 {
+  /* Backgrounds */
+  --bg-main: hsl(0, 0%, 90%);
+  --bg-toggle-keypad: hsl(0, 5%, 81%);
+  --bg-screen: hsl(0, 0%, 93%);
+
+  /* Keys */
+  --key-primary-bg: hsl(185, 42%, 37%);
+  --key-primary-shadow: hsl(185, 58%, 25%);
+
+  --key-accent-bg: hsl(25, 98%, 40%);
+  --key-accent-shadow: hsl(25, 99%, 27%);
+
+  --key-neutral-bg: hsl(0, 0%, 90%);
+  --key-neutral-shadow: hsl(35, 11%, 61%);
+
+  /* Text */
+  --text-primary: hsl(60, 10%, 19%);
+  --text-inverse: hsl(60, 10%, 19%);
+  --text-secondary: hsl(0, 100%, 100%);
+  --text-accent: hsl(60, 10%, 19%);
+}
+.theme-3 {
+  /* Backgrounds */
+  --bg-main: hsl(268, 75%, 9%);
+  --bg-toggle-keypad: hsl(268, 71%, 12%);
+  --bg-screen: hsl(268, 71%, 12%);
+
+  /* Keys */
+  --key-primary-bg: hsl(281, 89%, 26%);
+  --key-primary-shadow: hsl(285, 91%, 52%);
+
+  --key-accent-bg: hsl(176, 100%, 44%);
+  --key-accent-shadow: hsl(177, 92%, 70%);
+
+  --key-neutral-bg: hsl(268, 47%, 21%);
+  --key-neutral-shadow: hsl(290, 70%, 36%);
+
+  /* Text */
+  --text-primary: hsl(52, 100%, 62%);
+  --text-accent: hsl(52, 100%, 62%);
+  --text-secondary: hsl(198, 20%, 13%);
+  --text-inverse: hsl(0, 100%, 100%);
+}
+:root {
+  --trans-duration: 0.5s;
+  --border-rad: 0.625rem;
+}
+body {
+  font-family: "League Spartan", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  background-color: var(--bg-main);
+  transition: background-color var(--trans-duration);
+}
+ul {
+  padding: 0;
+  list-style: none;
+}
+h2,
+h3 {
+  font-weight: 500;
+  color: var(--text-accent);
+  font-size: 0.925rem;
+  text-transform: uppercase;
+}
+main {
+  flex: 1;
+  display: grid;
+  place-items: center;
+}
+#calc {
+  max-width: 25rem;
+  min-width: 19rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.calc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.calc-header .theme {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.calc-header ul {
+  width: 5rem;
+  height: 1.5rem;
+  border-radius: 1.5rem;
+  background-color: var(--bg-screen);
+  display: flex;
+  position: relative;
+  --switch-position: 0%;
+}
+.calc-header ul::before {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--key-accent-bg);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: calc(4px + var(--switch-position));
+  transition: left var(--trans-duration);
+}
+.calc-header ul li {
+  cursor: pointer;
+  position: relative;
+  flex: 1;
+  height: 100%;
+  counter-increment: --cout;
+}
+.calc-header ul li::before {
+  content: counter(--cout);
+  color: var(--text-accent);
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -100%);
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.screen {
+  height: 5rem;
+  background-color: var(--bg-screen);
+  border-radius: var(--border-rad);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem;
+  color: var(--text-accent);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.buttons {
+  padding: 1rem;
+  background-color: var(--bg-toggle-keypad);
+  border-radius: var(--border-rad);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  text-align: center;
+}
+.buttons div {
+  --box-shadow-depth: 2px;
+  color: var(--text-primary);
+  background-color: var(--key-neutral-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-rad);
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 var(--box-shadow-depth) 0 0 var(--key-neutral-shadow);
+  transition: 0.5s;
+  transform-origin: bottom center;
+}
+.buttons div:hover {
+  background-color: color-mix(in srgb, var(--key-neutral-bg), #fff 80%);
+}
+.buttons div.sp {
+  background-color: var(--key-primary-bg);
+  color: white;
+  box-shadow: inset 0 calc(-1 * var(--box-shadow-depth)) 0 0
+    var(--key-primary-shadow);
+  font-size: 1.25rem;
+}
+.buttons div.sp:hover {
+  background-color: color-mix(in srgb, var(--key-primary-bg), #fff 10%);
+}
+.reset {
+  grid-column: 1 / 3;
+}
+.buttons .equal {
+  grid-column: 3 / 5;
+  background-color: var(--key-accent-bg);
+  color: var(--text-secondary);
+}
+.buttons .equal:hover {
+  background-color: color-mix(in srgb, var(--key-accent-bg), #fff 30%);
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: var(--text-inverse);
+}
+.attribution a {
+  color: color-mix(in srgb, hsl(228, 45%, 44%) 40%, var(--text-inverse) 60%);
+}
