@@ -3,7 +3,7 @@ const themeContainer = document.getElementById("switch");
 const themeButtons = document.querySelectorAll("#switch li");
 const keybadButtons = document.querySelectorAll(".buttons div");
 const numReg = /\B(?=(\d{3})+(?!\d))/g;
-const numbersFormat = /^[0-9\.\+\\\*-]+$/;
+const numbersFormat = /^[0-9\.\+\/\*-]+$/;
 function numberForamtter() {
   screen.textContent = screen.textContent.replace(numReg, ",");
 }
