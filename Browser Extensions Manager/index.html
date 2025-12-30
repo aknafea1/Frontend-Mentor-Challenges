@@ -16,30 +16,33 @@
     <link rel="stylesheet" href="css/reseter.css" />
     <link rel="stylesheet" href="css/main.css" />
   </head>
-  <body class="dark-mode">
+  <body>
     <main>
       <header>
         <div class="logo">
-          <picture> </picture>
+          <picture></picture>
         </div>
         <div class="switch">
           <img src="assets/images/icon-sun.svg" alt="sun-svg" />
+          <img src="assets/images/icon-moon.svg" alt="sun-svg" />
         </div>
       </header>
       <div class="flex-group">
-        <h2>Extensions List</h2>
-        <menu>
-          <li>All</li>
+        <h1>Extensions List</h1>
+        <menu id="tabs">
+          <li class="active">All</li>
           <li>Active</li>
           <li>Inactive</li>
         </menu>
       </div>
+      <div id="extensions"></div>
     </main>
 
     <footer class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="#">Ahmed Kamal</a>.
     </footer>
+    <script src="script/main.js"></script>
   </body>
 </html>
